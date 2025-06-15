@@ -1,12 +1,12 @@
-resource "aws_ecr_repository" "sample" {
-  name = "sample"
+resource "aws_ecr_repository" "gslim" {
+  name = "gslim"
   image_scanning_configuration {
     scan_on_push = true
   }
   image_tag_mutability = "IMMUTABLE"
 }
-resource "aws_ecr_repository_policy" "sample" {
-  repository = aws_ecr_repository.sample.name
+resource "aws_ecr_repository_policy" "gslim" {
+  repository = aws_ecr_repository.gslim.name
   policy = jsonencode({
     "Version" : "2008-10-17",
     "Statement" : [
@@ -14,7 +14,7 @@ resource "aws_ecr_repository_policy" "sample" {
         "Effect" : "Allow",
         "Principal" : {
           "AWS" : [
-            "arn:aws:iam::${var.account_id.id}:root",
+            "arn:aws:iam::${var.886274844219.id}:root",
           ]
         },
         "Action" : [
